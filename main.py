@@ -6,8 +6,8 @@ from TuclaseExamen import arithmetic_arranger
 
 
 app = Flask(__name__)
-listaNum =[]
 
+listaNum =[]
 
 @app.route("/operaciones",methods=["GET"])
 def operaciones():
@@ -27,9 +27,9 @@ def ResultadoCine():
 
     respuesta = arithmetic_arranger(listaNum, True)
 
-    main(['-vv'])
-
-    return render_template("operaciones.html",res=respuesta)
+    txt = str(main(['-vv']))
+    print(txt)
+    return render_template("operaciones.html",res=respuesta,list=listaNum)
 
 
 if __name__ =="__main__":
